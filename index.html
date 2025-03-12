@@ -1,1 +1,591 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amna Noor - CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .cv-container {
+            display: flex;
+            width: 1000px;
+            max-width: 100%;
+            background-color: #f2eed8;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Left Sidebar */
+        .sidebar {
+            width: 30%;
+            background-color: #f2eed8;
+            margin-top: 230px;
+            padding: 20px;
+            /* Adding padding to the top to move contact section down */
+            padding-top: 60px;
+        }
+
+        /* Main Content */
+        .main-content {
+            width: 70%;
+            padding: 20px;
+            background-color: #fff;
+            position: relative;
+        }
+
+        /* Header Styles */
+        .header {
+            position: relative;
+            margin-bottom: 30px;
+            padding-top: 40px; /* Make room for image overlap */
+            padding-left: 130px; /* Added padding to prevent text from hiding behind image */
+        }
+
+        .profile-img-container {
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: white;
+            border: 10px solid white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: absolute;
+            top: 15px;
+            left: -125px; /* Half the width to make it overlap */
+            z-index: 10;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name-title {
+            width: 100%;
+        }
+
+        .name {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .name span:first-child {
+            color: #2d3b4a;
+        }
+
+        .name span:last-child {
+            color: #c9a738;
+        }
+
+        .title {
+            font-size: 18px;
+            color: #2d3b4a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .bio {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .header-separator {
+            width: 100%;
+            height: 2px;
+            background-color: #c9a738;
+            margin: 10px 0 20px 0;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #2d3b4a;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #c9a738;
+            padding-bottom: 5px;
+        }
+
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background-color: #c9a738;
+            border-radius: 50%;
+        }
+
+        .timeline-item:after {
+            content: "";
+            position: absolute;
+            left: -24px;
+            top: 17px;
+            width: 2px;
+            height: calc(100% + 15px);
+            background-color: #c9a738;
+        }
+
+        .timeline-item:last-child:after {
+            display: none;
+        }
+
+        .timeline-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #2d3b4a;
+        }
+
+        .timeline-date {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        .timeline-description {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .timeline-score {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-weight: bold;
+        }
+
+        /* Project Styles */
+        .project {
+            margin-bottom: 25px;
+        }
+
+        .project-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #2d3b4a;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .project-date {
+            color: #c9a738;
+            font-weight: normal;
+        }
+
+        .project-description {
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        /* Contact Styles */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #2d3b4a;
+        }
+
+        .contact-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #c9a738;
+            border-radius: 5px;
+            margin-right: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Achievement Styles */
+        .achievement-item {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: flex-start;
+        }
+
+        .achievement-bullet {
+            color: #c9a738;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        /* Interests Styles */
+        .interests-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .interest-item {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .interest-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #f7f7f7;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #c9a738;
+            font-size: 24px;
+        }
+
+        /* Skills Styles */
+        .skill-item {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: flex-start;
+        }
+
+        .skill-bullet {
+            color: #c9a738;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .skill-name {
+            font-weight: bold;
+            color: #2d3b4a;
+        }
+
+        .skill-details {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* Languages Styles */
+        .language-item {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .language-bullet {
+            color: #c9a738;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .language-name {
+            font-weight: bold;
+            color: #2d3b4a;
+        }
+
+        .language-level {
+            color: #777;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .cv-container {
+                flex-direction: column;
+            }
+
+            .sidebar, .main-content {
+                width: 100%;
+            }
+
+            .profile-img-container {
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-bottom: 20px;
+            }
+
+            .header {
+                padding-top: 0;
+                padding-left: 0; /* Reset padding on mobile */
+            }
+
+            .sidebar {
+                padding-top: 20px; /* Reset padding on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="section">
+                <h2 class="section-title">CONTACT</h2>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>+92 329 9795007</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div>zainulabidden43@gmail.com</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <div>https://visionforgelab.netlify.app/</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">in</div>
+                    <div>linkedin.com/in/zain-ul-abidden-85219b285</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">ACHIEVMENTS</h2>
+                <div class="achievement-item">
+                    <div class="achievement-bullet">●</div>
+                    <div>3rd Position in NASA Space App Nation Wide</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-bullet">●</div>
+                    <div>
+                        Participated In Future innovations Contest
+                    </div>
+                </div>
+         
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">CO-CURRICULAR</h2>
+                <div class="achievement-item">
+                    <div class="achievement-bullet">●</div>
+                    <div>Software Engineer at TechVision365</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-bullet">●</div>
+                    <div>Module Building Contributor</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">INTERESTS</h2>
+                <div class="interests-container">
+                    <div class="interest-item">
+                        <div class="interest-icon">💻</div>
+                        <div>Web<br> Development</div>
+                    </div>
+                    <div class="interest-item">
+                        <div class="interest-icon">🎨</div>
+                        <div>UI/UX <br>Design</div>
+                    </div>
+                    <div class="interest-item">
+                        <div class="interest-icon">🔧</div>
+                        <div>Module <br>Building</div>
+                    </div>
+                    <div class="interest-item">
+                        <div class="interest-icon">📱</div>
+                        <div>App <br>Development</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">LANGUAGES</h2>
+                <div class="language-item">
+                    <div class="language-bullet">●</div>
+                    <div class="language-name">Urdu</div>
+                    <div class="language-level"> - Native Language</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-bullet">●</div>
+                    <div class="language-name">English</div>
+                    <div class="language-level"> - Proficient</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-bullet">●</div>
+                    <div class="language-name">Punjabi</div>
+                    <div class="language-level"> - Intermediate</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <div class="profile-img-container">
+                    <img src="image.png" alt="Zain Ul Abidden" class="profile-img">
+                </div>
+                <div class="name-title">
+                    <h1 class="name"><span>ZAIN</span> <span>UL ABIDDEN</span></h1>
+                    <h2 class="title">BACHELOR OF COMPUTER SCIENCE</h2>
+                    <div class="header-separator"></div>
+                    <p class="bio">
+                        Dynamic and motivated Web Designer and Developer with hands-on experience in creating visually impactful and user-focused websites.
+                    </p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">EDUCATION</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3 class="timeline-title">University of Sargodha</h3>
+                        <p class="timeline-date">2021-2025</p>
+                        <p class="timeline-description">Bachelor of Computer Science</p>
+                        <span class="timeline-score">3.85 GPA</span>
+                    </div>
+                    <div class="timeline-item">
+                        <h3 class="timeline-title">Air Banse Inter College Mushaf Sargodha</h3>
+                        <p class="timeline-date">2019-2021</p>
+                        <p class="timeline-description">Intermediate in Computer Science</p>
+                        <span class="timeline-score">95.54 %</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">EXPERIENCE</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3 class="timeline-title"> TechVision365</h3>
+                        <p class="timeline-date">- Oct 2023 - Oct 2024</p>
+                        <p class="timeline-description">Software Engineer - Contributed to various projects involving module building and web development, delivering high-quality solutions tailored to client needs.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3 class="timeline-title"> Upwork</h3>
+                        <p class="timeline-date">- July 2024</p>
+                        <p class="timeline-description">Website Developer - Designed and developed custom websites with a focus on functionality, scalability, and user experience.</p>
+                    </div>
+                </div>
+            </div>
+     
+            <div class="section">
+                <h2 class="section-title">PROJECTS</h2>
+                <div class="project">
+                    <div class="project-title">
+                        Magnetic Recconection
+                        <span class="project-date">- Sept 2023</span>
+                    </div>
+                    <div class="project-description">
+                        We developed a web-based tool to measure magnetic reconnections in space—key to understanding solar flares and geomagnetic storms. 
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-title">
+                        Bluetooth Cellular Gateway
+                        <span class="project-date">- Oct 2024</span>
+                    </div>
+                    <div class="project-description">
+                        This web-based platform enables businesses to manage and monitor Bluetooth devices connected to cellular networks with ease.
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-title">
+                        Cake Corner App
+                        <span class="project-date">- May 2024</span>
+                    </div>
+                    <div class="project-description">
+                        Designed and developed a bakery mobile app.
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-title">
+                        PowerGen Solutions Web Portal Development
+                        <span class="project-date">- Aug 2024</span>
+                    </div>
+                    <div class="project-description">
+                        Explore our comprehensive catalog, learn about our latest innovations, and discover how our generators can power your business reliably and efficiently.
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-title">
+                        Dani's Fabric
+                        <span class="project-date">-Sep 2024</span>
+                    </div>
+                    <div class="project-description">
+                        Developed a web-based platform for Dani's Fabric to efficiently manage purchase and sale records.
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-title">
+                        Medicine Inventory System
+                        <span class="project-date">- Jan 2023</span>
+                    </div>
+                    <div class="project-description">
+                        Developed a web-based platform for efficient management of medicine purchase and sale records. 
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">SKILLS & EXPERTISE</h2>
+                <div class="skill-item">
+                    <div class="skill-bullet">●</div>
+                    <div>
+                        <span class="skill-name">Web Development</span>
+                        <span class="skill-details"> (React JS, PHP, HTML5, CSS, JavaScript, Python)</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-bullet">●</div>
+                    <div>
+                        <span class="skill-name">User Interface Design</span>
+                        <span class="skill-details"> (Intuitive & Visually Appealing Designs)</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-bullet">●</div>
+                    <div>
+                        <span class="skill-name">Technical Tools</span>
+                        <span class="skill-details"> (Visual Studio Code, GitHub, Netlify)</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-bullet">●</div>
+                    <div>
+                        <span class="skill-name">Module Building</span>
+                        <span class="skill-details"> (Custom Software Modules, Workflow Optimization)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
