@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Zain Ul Abidden - CV</title>
+    <title>Zain Ul Abidden - CV</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         /* Reset and Base Styles */
@@ -351,9 +350,14 @@
                 padding-top: 20px; /* Reset padding on mobile */
             }
         }
+        .link{
+            text-decoration: none;
+            color:black;
+        }
     </style>
 </head>
-<body>
+
+<body itemscope itemtype="https://schema.org/Person">
     <div class="cv-container">
         <!-- Left Sidebar -->
         <div class="sidebar">
@@ -361,42 +365,39 @@
                 <h2 class="section-title">CONTACT</h2>
                 <div class="contact-item">
                     <div class="contact-icon">📞</div>
-                    <div>+92 329 9795007</div>
+                    <div itemprop="telephone">+92 329 9795007</div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">✉️</div>
-                    <div>zainulabidden43@gmail.com</div>
+                    <div itemprop="email">zainulabidden43@gmail.com</div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">🌐</div>
-                    <div>https://visionforgelab.netlify.app/</div>
+                    <div><a class="link" href="https://visionforgelab.netlify.app/" itemprop="url">My Portfolio</a></div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">in</div>
-                    <div>linkedin.com/in/zain-ul-abidden-85219b285</div>
+                    <div><a class="link" href="https://linkedin.com/in/zain-ul-abidden-85219b285" itemprop="sameAs">View My Linkedin</a></div>
                 </div>
             </div>
 
             <div class="section">
                 <h2 class="section-title">ACHIEVMENTS</h2>
-                <div class="achievement-item">
+                <div class="achievement-item" itemprop="award">
                     <div class="achievement-bullet">●</div>
                     <div>3rd Position in NASA Space App Nation Wide</div>
                 </div>
-                <div class="achievement-item">
+                <div class="achievement-item" itemprop="award">
                     <div class="achievement-bullet">●</div>
-                    <div>
-                        Participated In Future innovations Contest
-                    </div>
+                    <div>Participated In Future innovations Contest</div>
                 </div>
-         
             </div>
 
             <div class="section">
                 <h2 class="section-title">CO-CURRICULAR</h2>
                 <div class="achievement-item">
                     <div class="achievement-bullet">●</div>
-                    <div>Software Engineer at TechVision365</div>
+                    <div itemprop="jobTitle">Software Engineer at TechVision365</div>
                 </div>
                 <div class="achievement-item">
                     <div class="achievement-bullet">●</div>
@@ -407,19 +408,19 @@
             <div class="section">
                 <h2 class="section-title">INTERESTS</h2>
                 <div class="interests-container">
-                    <div class="interest-item">
+                    <div class="interest-item" itemprop="knowsAbout">
                         <div class="interest-icon">💻</div>
                         <div>Web<br> Development</div>
                     </div>
-                    <div class="interest-item">
+                    <div class="interest-item" itemprop="knowsAbout">
                         <div class="interest-icon">🎨</div>
                         <div>UI/UX <br>Design</div>
                     </div>
-                    <div class="interest-item">
+                    <div class="interest-item" itemprop="knowsAbout">
                         <div class="interest-icon">🔧</div>
                         <div>Module <br>Building</div>
                     </div>
-                    <div class="interest-item">
+                    <div class="interest-item" itemprop="knowsAbout">
                         <div class="interest-icon">📱</div>
                         <div>App <br>Development</div>
                     </div>
@@ -430,17 +431,17 @@
                 <h2 class="section-title">LANGUAGES</h2>
                 <div class="language-item">
                     <div class="language-bullet">●</div>
-                    <div class="language-name">Urdu</div>
+                    <div class="language-name" itemprop="knowsLanguage">Urdu</div>
                     <div class="language-level"> - Native Language</div>
                 </div>
                 <div class="language-item">
                     <div class="language-bullet">●</div>
-                    <div class="language-name">English</div>
+                    <div class="language-name" itemprop="knowsLanguage">English</div>
                     <div class="language-level"> - Proficient</div>
                 </div>
                 <div class="language-item">
                     <div class="language-bullet">●</div>
-                    <div class="language-name">Punjabi</div>
+                    <div class="language-name" itemprop="knowsLanguage">Punjabi</div>
                     <div class="language-level"> - Intermediate</div>
                 </div>
             </div>
@@ -450,13 +451,13 @@
         <div class="main-content">
             <div class="header">
                 <div class="profile-img-container">
-                    <img src="image.png" alt="Zain Ul Abidden" class="profile-img">
+                    <img src="image.png" alt="Zain Ul Abidden" class="profile-img" itemprop="image">
                 </div>
                 <div class="name-title">
-                    <h1 class="name"><span>ZAIN</span> <span>UL ABIDDEN</span></h1>
-                    <h2 class="title">BACHELOR OF COMPUTER SCIENCE</h2>
+                    <h1 class="name" itemprop="name"><span>ZAIN</span> <span>UL ABIDDEN</span></h1>
+                    <h2 class="title" itemprop="jobTitle">BACHELOR OF COMPUTER SCIENCE</h2>
                     <div class="header-separator"></div>
-                    <p class="bio">
+                    <p class="bio" itemprop="description">
                         Dynamic and motivated Web Designer and Developer with hands-on experience in creating visually impactful and user-focused websites.
                     </p>
                 </div>
@@ -465,16 +466,20 @@
             <div class="section">
                 <h2 class="section-title">EDUCATION</h2>
                 <div class="timeline">
-                    <div class="timeline-item">
-                        <h3 class="timeline-title">University of Sargodha</h3>
-                        <p class="timeline-date">2021-2025</p>
-                        <p class="timeline-description">Bachelor of Computer Science</p>
+                    <div class="timeline-item" itemprop="alumniOf" itemscope itemtype="https://schema.org/EducationalOrganization">
+                        <h3 class="timeline-title" itemprop="name">University of Sargodha</h3>
+                        <p class="timeline-date">
+                            <span itemprop="foundingDate">2021</span>-<span itemprop="dissolutionDate">2025</span>
+                        </p>
+                        <p class="timeline-description" itemprop="educationalCredentialAwarded">Bachelor of Computer Science</p>
                         <span class="timeline-score">3.85 GPA</span>
                     </div>
-                    <div class="timeline-item">
-                        <h3 class="timeline-title">Air Banse Inter College Mushaf Sargodha</h3>
-                        <p class="timeline-date">2019-2021</p>
-                        <p class="timeline-description">Intermediate in Computer Science</p>
+                    <div class="timeline-item" itemprop="alumniOf" itemscope itemtype="https://schema.org/EducationalOrganization">
+                        <h3 class="timeline-title" itemprop="name">Air Banse Inter College Mushaf Sargodha</h3>
+                        <p class="timeline-date">
+                            <span itemprop="foundingDate">2019</span>-<span itemprop="dissolutionDate">2021</span>
+                        </p>
+                        <p class="timeline-description" itemprop="educationalCredentialAwarded">Intermediate in Computer Science</p>
                         <span class="timeline-score">95.54 %</span>
                     </div>
                 </div>
@@ -483,72 +488,76 @@
             <div class="section">
                 <h2 class="section-title">EXPERIENCE</h2>
                 <div class="timeline">
-                    <div class="timeline-item">
-                        <h3 class="timeline-title"> TechVision365</h3>
-                        <p class="timeline-date">- Oct 2023 - Oct 2024</p>
-                        <p class="timeline-description">Software Engineer - Contributed to various projects involving module building and web development, delivering high-quality solutions tailored to client needs.</p>
+                    <div class="timeline-item" itemprop="workExperience" itemscope itemtype="https://schema.org/WorkPosition">
+                        <h3 class="timeline-title" itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+                            <span itemprop="name">TechVision365</span>
+                        </h3>
+                        <p class="timeline-date">- <span itemprop="startDate">Oct 2023</span> - <span itemprop="endDate">Oct 2024</span></p>
+                        <p class="timeline-description" itemprop="description">Software Engineer - Contributed to various projects involving module building and web development, delivering high-quality solutions tailored to client needs.</p>
                     </div>
-                    <div class="timeline-item">
-                        <h3 class="timeline-title"> Upwork</h3>
-                        <p class="timeline-date">- July 2024</p>
-                        <p class="timeline-description">Website Developer - Designed and developed custom websites with a focus on functionality, scalability, and user experience.</p>
+                    <div class="timeline-item" itemprop="workExperience" itemscope itemtype="https://schema.org/WorkPosition">
+                        <h3 class="timeline-title" itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+                            <span itemprop="name">Upwork</span>
+                        </h3>
+                        <p class="timeline-date">- <span itemprop="startDate">July 2024</span></p>
+                        <p class="timeline-description" itemprop="description">Website Developer - Designed and developed custom websites with a focus on functionality, scalability, and user experience.</p>
                     </div>
                 </div>
             </div>
      
             <div class="section">
                 <h2 class="section-title">PROJECTS</h2>
-                <div class="project">
+                <div class="project" itemprop="makesOffer" itemscope itemtype="https://schema.org/CreativeWork">
                     <div class="project-title">
-                        Magnetic Recconection
-                        <span class="project-date">- Sept 2023</span>
+                        <span itemprop="name">Magnetic Recconection</span>
+                        <span class="project-date">- <span itemprop="dateCreated">Sept 2023</span></span>
                     </div>
-                    <div class="project-description">
+                    <div class="project-description" itemprop="description">
                         We developed a web-based tool to measure magnetic reconnections in space—key to understanding solar flares and geomagnetic storms. 
                     </div>
                 </div>
-                <div class="project">
+                <div class="project" itemprop="makesOffer" itemscope itemtype="https://schema.org/CreativeWork">
                     <div class="project-title">
-                        Bluetooth Cellular Gateway
-                        <span class="project-date">- Oct 2024</span>
+                        <span itemprop="name">Bluetooth Cellular Gateway</span>
+                        <span class="project-date">- <span itemprop="dateCreated">Oct 2024</span></span>
                     </div>
-                    <div class="project-description">
+                    <div class="project-description" itemprop="description">
                         This web-based platform enables businesses to manage and monitor Bluetooth devices connected to cellular networks with ease.
                     </div>
                 </div>
-                <div class="project">
+                <div class="project" itemprop="makesOffer" itemscope itemtype="https://schema.org/CreativeWork">
                     <div class="project-title">
-                        Cake Corner App
-                        <span class="project-date">- May 2024</span>
+                        <span itemprop="name">Cake Corner App</span>
+                        <span class="project-date">- <span itemprop="dateCreated">May 2024</span></span>
                     </div>
-                    <div class="project-description">
+                    <div class="project-description" itemprop="description">
                         Designed and developed a bakery mobile app.
                     </div>
                 </div>
-                <div class="project">
+                <div class="project" itemprop="makesOffer" itemscope itemtype="https://schema.org/CreativeWork">
                     <div class="project-title">
-                        PowerGen Solutions Web Portal Development
-                        <span class="project-date">- Aug 2024</span>
+                        <span itemprop="name">PowerGen Solutions Web Portal Development</span>
+                        <span class="project-date">- <span itemprop="dateCreated">Aug 2024</span></span>
                     </div>
-                    <div class="project-description">
+                    <div class="project-description" itemprop="description">
                         Explore our comprehensive catalog, learn about our latest innovations, and discover how our generators can power your business reliably and efficiently.
                     </div>
                 </div>
-                <div class="project">
+                <div class="project" itemprop="makesOffer" itemscope itemtype="https://schema.org/CreativeWork">
                     <div class="project-title">
-                        Dani's Fabric
-                        <span class="project-date">-Sep 2024</span>
+                        <span itemprop="name">Dani's Fabric</span>
+                        <span class="project-date">-<span itemprop="dateCreated">Sep 2024</span></span>
                     </div>
-                    <div class="project-description">
+                    <div class="project-description" itemprop="description">
                         Developed a web-based platform for Dani's Fabric to efficiently manage purchase and sale records.
                     </div>
                 </div>
-                <div class="project">
+                <div class="project" itemprop="makesOffer" itemscope itemtype="https://schema.org/CreativeWork">
                     <div class="project-title">
-                        Medicine Inventory System
-                        <span class="project-date">- Jan 2023</span>
+                        <span itemprop="name">Medicine Inventory System</span>
+                        <span class="project-date">- <span itemprop="dateCreated">Jan 2023</span></span>
                     </div>
-                    <div class="project-description">
+                    <div class="project-description" itemprop="description">
                         Developed a web-based platform for efficient management of medicine purchase and sale records. 
                     </div>
                 </div>
@@ -559,28 +568,28 @@
                 <div class="skill-item">
                     <div class="skill-bullet">●</div>
                     <div>
-                        <span class="skill-name">Web Development</span>
+                        <span class="skill-name" itemprop="skill">Web Development</span>
                         <span class="skill-details"> (React JS, PHP, HTML5, CSS, JavaScript, Python)</span>
                     </div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-bullet">●</div>
                     <div>
-                        <span class="skill-name">User Interface Design</span>
+                        <span class="skill-name" itemprop="skill">User Interface Design</span>
                         <span class="skill-details"> (Intuitive & Visually Appealing Designs)</span>
                     </div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-bullet">●</div>
                     <div>
-                        <span class="skill-name">Technical Tools</span>
+                        <span class="skill-name" itemprop="skill">Technical Tools</span>
                         <span class="skill-details"> (Visual Studio Code, GitHub, Netlify)</span>
                     </div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-bullet">●</div>
                     <div>
-                        <span class="skill-name">Module Building</span>
+                        <span class="skill-name" itemprop="skill">Module Building</span>
                         <span class="skill-details"> (Custom Software Modules, Workflow Optimization)</span>
                     </div>
                 </div>
